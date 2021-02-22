@@ -1,0 +1,3 @@
+INSERT INTO tb_document_storage (name, description, created_At) VALUES ('Books', 'map', NOW());
+INSERT INTO tb_document_storage (name, description, created_At) VALUES ('Electronics', 'phone', NOW());
+INSERT INTO tb_document_storage (name, description, created_At) VALUES ('Computers', 'mouse', NOW());
