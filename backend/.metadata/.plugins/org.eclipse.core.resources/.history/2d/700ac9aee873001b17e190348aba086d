@@ -1,0 +1,5 @@
+package com.hntecnologia.document.resources.exceptions;
+
+public class StandardError {
+
+}

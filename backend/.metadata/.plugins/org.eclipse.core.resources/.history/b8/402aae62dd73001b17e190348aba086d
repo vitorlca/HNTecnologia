@@ -1,0 +1,5 @@
+package com.hntecnologia.document.repositories;
+
+public class DocumentStorageRepository {
+
+}

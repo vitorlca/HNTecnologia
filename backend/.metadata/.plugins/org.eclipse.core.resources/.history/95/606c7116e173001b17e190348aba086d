@@ -1,0 +1,5 @@
+package com.hntecnologia.document.exceptions;
+
+public class ResourceNotFoundException {
+
+}

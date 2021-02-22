@@ -1,0 +1,5 @@
+package com.hntecnologia.document.entities;
+
+public class DocumentStorage {
+
+}

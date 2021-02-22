@@ -1,0 +1,5 @@
+package com.hntecnologia.document.services;
+
+public class DocumentStorageService {
+
+}

@@ -1,0 +1,39 @@
+package com.hntecnologia.document.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hntecnologia.document.dto.DocumentStorageDTO;
+import com.hntecnologia.document.entities.DocumentStorage;
+import com.hntecnologia.document.exceptions.ResourceNotFoundException;
+import com.hntecnologia.document.repositories.DocumentStorageRepository;
+
+@Service
+public class DocumentStorageService {
+	
+	@Autowired
+	private DocumentStorageRepository repository;
+	
+	@Transactional(readOnly = true)
+	public List<DocumentStorageDTO> findAll() {
+		List<DocumentStorage> list = repository.findAll();
+		List<DocumentStorageDTO> listDto = new ArrayList<>();
+		for (DocumentStorage doc : list) {
+			listDto.add(new DocumentStorageDTO(doc));
+		}
+		return listDto;
+	}
+	
+	@Transactional(readOnly = true)
+	public DocumentStorageDTO findById(Long id) {
+		Optional<DocumentStorage> obj = repository.findById(id);
+		DocumentStorage entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		return new DocumentStorageDTO(entity);
+	}
+
+}
